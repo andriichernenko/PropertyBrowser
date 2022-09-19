@@ -21,6 +21,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window.makeKeyAndVisible()
         self.window = window
 
+        Task {
+            let propertyList = try await NetworkPropertyService(session: .shared)
+                .fetchPropertyList()
+            
+            print(">>> \(propertyList)")
+            
+            let propertyDetails = try await NetworkPropertyService(session: .shared)
+                .fetchDetails(for: propertyList.items.first!)
+            
+            print(">>> \(propertyDetails)")
+
+        }
+        
         return true
     }
 }

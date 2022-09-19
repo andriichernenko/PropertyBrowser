@@ -21,9 +21,9 @@ final class NetworkPropertyService: PropertyService {
         return propertyList
     }
     
-    func fetchDetails(by: Property.ID) async throws -> Property {
+    func fetchDetails(for: PropertyList.Item) async throws -> PropertyDetails {
         let (data, _) = try await session.data(from: .propertyDetails)
-        let propertyList = try JSONDecoder().decode(Property.self, from: data)
+        let propertyList = try JSONDecoder().decode(PropertyDetails.self, from: data)
         
         return propertyList
     }

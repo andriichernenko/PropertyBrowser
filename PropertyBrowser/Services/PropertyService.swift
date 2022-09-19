@@ -11,5 +11,5 @@ protocol PropertyService {
     
     func fetchPropertyList() async throws -> PropertyList
     
-    func fetchDetails(by: Property.ID) async throws -> Property
+    func fetchDetails(for: PropertyList.Item) async throws -> PropertyDetails
 }

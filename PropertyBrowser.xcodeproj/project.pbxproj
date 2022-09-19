@@ -10,13 +10,16 @@
 		40DB441928D8ED950002B3DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DB441828D8ED950002B3DD /* AppDelegate.swift */; };
 		40DB442228D8ED950002B3DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40DB442128D8ED950002B3DD /* Assets.xcassets */; };
 		40DB442528D8ED950002B3DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40DB442328D8ED950002B3DD /* LaunchScreen.storyboard */; };
-		40DB443028D8ED950002B3DD /* ModelSerializationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DB442F28D8ED950002B3DD /* ModelSerializationTests.swift */; };
+		40DB443028D8ED950002B3DD /* PropertyListSerializationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DB442F28D8ED950002B3DD /* PropertyListSerializationTests.swift */; };
 		40DB443A28D8ED950002B3DD /* PropertyBrowserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DB443928D8ED950002B3DD /* PropertyBrowserUITests.swift */; };
 		40DB443C28D8ED950002B3DD /* PropertyBrowserUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DB443B28D8ED950002B3DD /* PropertyBrowserUITestsLaunchTests.swift */; };
-		40DB444C28D8F1A50002B3DD /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DB444B28D8F1A50002B3DD /* Models.swift */; };
 		40DB444F28D90FE10002B3DD /* PropertyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DB444E28D90FE10002B3DD /* PropertyService.swift */; };
 		40DB445128D9106C0002B3DD /* MockPropertyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DB445028D9106C0002B3DD /* MockPropertyService.swift */; };
 		40DB445328D912680002B3DD /* NetworkPropertyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DB445228D912680002B3DD /* NetworkPropertyService.swift */; };
+		40DB445528D9181A0002B3DD /* PropertyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DB445428D9181A0002B3DD /* PropertyList.swift */; };
+		40DB445728D918650002B3DD /* MonetaryAmount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DB445628D918650002B3DD /* MonetaryAmount.swift */; };
+		40DB445928D918A00002B3DD /* PropertyDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DB445828D918A00002B3DD /* PropertyDetails.swift */; };
+		40DB445B28D922D20002B3DD /* PropertyDetailsSerializationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DB445A28D922D20002B3DD /* PropertyDetailsSerializationTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,14 +46,17 @@
 		40DB442428D8ED950002B3DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		40DB442628D8ED950002B3DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40DB442B28D8ED950002B3DD /* PropertyBrowserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PropertyBrowserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		40DB442F28D8ED950002B3DD /* ModelSerializationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelSerializationTests.swift; sourceTree = "<group>"; };
+		40DB442F28D8ED950002B3DD /* PropertyListSerializationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyListSerializationTests.swift; sourceTree = "<group>"; };
 		40DB443528D8ED950002B3DD /* PropertyBrowserUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PropertyBrowserUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		40DB443928D8ED950002B3DD /* PropertyBrowserUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyBrowserUITests.swift; sourceTree = "<group>"; };
 		40DB443B28D8ED950002B3DD /* PropertyBrowserUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyBrowserUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		40DB444B28D8F1A50002B3DD /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		40DB444E28D90FE10002B3DD /* PropertyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyService.swift; sourceTree = "<group>"; };
 		40DB445028D9106C0002B3DD /* MockPropertyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPropertyService.swift; sourceTree = "<group>"; };
 		40DB445228D912680002B3DD /* NetworkPropertyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkPropertyService.swift; sourceTree = "<group>"; };
+		40DB445428D9181A0002B3DD /* PropertyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyList.swift; sourceTree = "<group>"; };
+		40DB445628D918650002B3DD /* MonetaryAmount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonetaryAmount.swift; sourceTree = "<group>"; };
+		40DB445828D918A00002B3DD /* PropertyDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyDetails.swift; sourceTree = "<group>"; };
+		40DB445A28D922D20002B3DD /* PropertyDetailsSerializationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyDetailsSerializationTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,7 +122,8 @@
 		40DB442E28D8ED950002B3DD /* PropertyBrowserTests */ = {
 			isa = PBXGroup;
 			children = (
-				40DB442F28D8ED950002B3DD /* ModelSerializationTests.swift */,
+				40DB442F28D8ED950002B3DD /* PropertyListSerializationTests.swift */,
+				40DB445A28D922D20002B3DD /* PropertyDetailsSerializationTests.swift */,
 			);
 			path = PropertyBrowserTests;
 			sourceTree = "<group>";
@@ -147,7 +154,9 @@
 		40DB444A28D8F17E0002B3DD /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				40DB444B28D8F1A50002B3DD /* Models.swift */,
+				40DB445428D9181A0002B3DD /* PropertyList.swift */,
+				40DB445828D918A00002B3DD /* PropertyDetails.swift */,
+				40DB445628D918650002B3DD /* MonetaryAmount.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -293,8 +302,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				40DB445328D912680002B3DD /* NetworkPropertyService.swift in Sources */,
+				40DB445728D918650002B3DD /* MonetaryAmount.swift in Sources */,
 				40DB445128D9106C0002B3DD /* MockPropertyService.swift in Sources */,
-				40DB444C28D8F1A50002B3DD /* Models.swift in Sources */,
+				40DB445928D918A00002B3DD /* PropertyDetails.swift in Sources */,
+				40DB445528D9181A0002B3DD /* PropertyList.swift in Sources */,
 				40DB444F28D90FE10002B3DD /* PropertyService.swift in Sources */,
 				40DB441928D8ED950002B3DD /* AppDelegate.swift in Sources */,
 			);
@@ -304,7 +315,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40DB443028D8ED950002B3DD /* ModelSerializationTests.swift in Sources */,
+				40DB445B28D922D20002B3DD /* PropertyDetailsSerializationTests.swift in Sources */,
+				40DB443028D8ED950002B3DD /* PropertyListSerializationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

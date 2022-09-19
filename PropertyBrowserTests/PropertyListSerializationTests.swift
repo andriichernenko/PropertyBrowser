@@ -1,5 +1,5 @@
 //
-//  ModelSerializationTests.swift
+//  PropertyListSerializationTests.swift
 //  PropertyBrowserTests
 //
 //  Created by Andrii Chernenko on 2022-09-19.
@@ -9,26 +9,26 @@ import XCTest
 
 @testable import PropertyBrowser
 
-final class ModelSerializationTests: XCTestCase {
+final class PropertyListSerializationTests: XCTestCase {
 
-    func testDeserialization_plot() throws {
-        let deserializedPlot = try JSONDecoder().decode(Property.self, from: plotJSON.data(using: .utf8)!)
-        XCTAssertEqual(deserializedPlot, referencePlot)
+    func testDeserialization_area() throws {
+        let deserializedPlot = try JSONDecoder().decode(PropertyList.Item.self, from: areaJSON.data(using: .utf8)!)
+        XCTAssertEqual(deserializedPlot, referenceArea)
     }
     
     func testDeserialization_property() throws {
-        let deserializedProperty = try JSONDecoder().decode(Property.self, from: propertyJSON.data(using: .utf8)!)
+        let deserializedProperty = try JSONDecoder().decode(PropertyList.Item.self, from: propertyJSON.data(using: .utf8)!)
         XCTAssertEqual(deserializedProperty, referenceProperty)
     }
     
     func testDeserialization_highlightedProperty() throws {
-        let deserializedProperty = try JSONDecoder().decode(Property.self, from: highlightedPropertyJSON.data(using: .utf8)!)
+        let deserializedProperty = try JSONDecoder().decode(PropertyList.Item.self, from: highlightedPropertyJSON.data(using: .utf8)!)
         XCTAssertEqual(deserializedProperty, referenceHighlightedProperty)
     }
     
-    func testDeserialization_withInvalidPropertyKind_fails() throws {
+    func testDeserialization_withInvalidPropertyType_fails() throws {
         XCTAssertThrowsError(
-            try JSONDecoder().decode(Property.self, from: propertyWithInvalidKindJSON.data(using: .utf8)!)
+            try JSONDecoder().decode(PropertyList.Item.self, from: propertyWithInvalidTypeJSON.data(using: .utf8)!)
         )
     }
     
@@ -44,17 +44,18 @@ final class ModelSerializationTests: XCTestCase {
     }
 }
 
-private let referencePlot = Property(
+private let referenceArea = PropertyList.Item(
     id: .init(rawValue: "1234567892"),
     imageURL: .init(string: "https://i.imgur.com/v6GDnCG.png")!,
-    kind: .plot(.init(
-        area: "Stockholm",
+    type: .area,
+    attributes: .area(.init(
+        name: "Stockholm",
         ratingFormatted: "4.5/5",
         averagePrice: 50100
     ))
 )
 
-private let plotJSON = """
+private let areaJSON = """
 {
     "type": "Area",
     "id": "1234567892",
@@ -65,10 +66,11 @@ private let plotJSON = """
 }
 """
 
-private let referenceProperty = Property(
+private let referenceProperty = PropertyList.Item(
     id: .init(rawValue: "1234567893"),
     imageURL: .init(string: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Bertha_Petterssons_hus_01.jpg/800px-Bertha_Petterssons_hus_01.jpg")!,
-    kind: .property(.init(
+    type: .property,
+    attributes: .property(.init(
         daysSincePublishing: 12,
         askingPrice: 1150000,
         livingArea: 29,
@@ -96,10 +98,11 @@ private let propertyJSON = """
 }
 """
 
-private let referenceHighlightedProperty = Property(
+private let referenceHighlightedProperty = PropertyList.Item(
     id: .init(rawValue: "1234567890"),
     imageURL: .init(string: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Hus_i_svarttorp.jpg/800px-Hus_i_svarttorp.jpg")!,
-    kind: .highlightedProperty(.init(
+    type: .highlightedProperty,
+    attributes: .property(.init(
         daysSincePublishing: 1,
         askingPrice: 2650000,
         livingArea: 120,
@@ -126,7 +129,7 @@ private let highlightedPropertyJSON = """
 }
 """
 
-private let propertyWithInvalidKindJSON = """
+private let propertyWithInvalidTypeJSON = """
 {
     "type": "A random property type",
     "id": "1234567890",
@@ -134,12 +137,12 @@ private let propertyWithInvalidKindJSON = """
 }
 """
 
-private let referencePropertyList = PropertyList(items: [referencePlot, referenceProperty, referenceHighlightedProperty])
+private let referencePropertyList = PropertyList(items: [referenceArea, referenceProperty, referenceHighlightedProperty])
 
 private let propertyListJSON = """
 {
     "items": [
-        \(plotJSON),
+        \(areaJSON),
         \(propertyJSON),
         \(highlightedPropertyJSON)
     ]
@@ -149,10 +152,10 @@ private let propertyListJSON = """
 private let propertyListWithInvalidItemsJSON = """
 {
     "items": [
-        \(plotJSON),
+        \(areaJSON),
         \(propertyJSON),
         \(highlightedPropertyJSON),
-        \(propertyWithInvalidKindJSON)
+        \(propertyWithInvalidTypeJSON)
     ]
 }
 """
