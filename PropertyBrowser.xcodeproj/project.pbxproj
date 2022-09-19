@@ -14,6 +14,9 @@
 		40DB443A28D8ED950002B3DD /* PropertyBrowserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DB443928D8ED950002B3DD /* PropertyBrowserUITests.swift */; };
 		40DB443C28D8ED950002B3DD /* PropertyBrowserUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DB443B28D8ED950002B3DD /* PropertyBrowserUITestsLaunchTests.swift */; };
 		40DB444C28D8F1A50002B3DD /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DB444B28D8F1A50002B3DD /* Models.swift */; };
+		40DB444F28D90FE10002B3DD /* PropertyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DB444E28D90FE10002B3DD /* PropertyService.swift */; };
+		40DB445128D9106C0002B3DD /* MockPropertyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DB445028D9106C0002B3DD /* MockPropertyService.swift */; };
+		40DB445328D912680002B3DD /* NetworkPropertyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DB445228D912680002B3DD /* NetworkPropertyService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +48,9 @@
 		40DB443928D8ED950002B3DD /* PropertyBrowserUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyBrowserUITests.swift; sourceTree = "<group>"; };
 		40DB443B28D8ED950002B3DD /* PropertyBrowserUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyBrowserUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		40DB444B28D8F1A50002B3DD /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		40DB444E28D90FE10002B3DD /* PropertyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyService.swift; sourceTree = "<group>"; };
+		40DB445028D9106C0002B3DD /* MockPropertyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPropertyService.swift; sourceTree = "<group>"; };
+		40DB445228D912680002B3DD /* NetworkPropertyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkPropertyService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,7 @@
 				40DB444A28D8F17E0002B3DD /* Models */,
 				40DB444828D8F15E0002B3DD /* Views */,
 				40DB444928D8F16C0002B3DD /* ViewModels */,
+				40DB444D28D90F920002B3DD /* Services */,
 				40DB442128D8ED950002B3DD /* Assets.xcassets */,
 				40DB442328D8ED950002B3DD /* LaunchScreen.storyboard */,
 				40DB442628D8ED950002B3DD /* Info.plist */,
@@ -143,6 +150,16 @@
 				40DB444B28D8F1A50002B3DD /* Models.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		40DB444D28D90F920002B3DD /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				40DB444E28D90FE10002B3DD /* PropertyService.swift */,
+				40DB445228D912680002B3DD /* NetworkPropertyService.swift */,
+				40DB445028D9106C0002B3DD /* MockPropertyService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,7 +292,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40DB445328D912680002B3DD /* NetworkPropertyService.swift in Sources */,
+				40DB445128D9106C0002B3DD /* MockPropertyService.swift in Sources */,
 				40DB444C28D8F1A50002B3DD /* Models.swift in Sources */,
+				40DB444F28D90FE10002B3DD /* PropertyService.swift in Sources */,
 				40DB441928D8ED950002B3DD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
