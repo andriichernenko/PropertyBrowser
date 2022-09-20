@@ -13,26 +13,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        let view = UIViewController()
-        view.view.backgroundColor = .cyan
+        let service = NetworkPropertyService(session: .shared)
+        let listViewer = PropertyListViewer(propertyService: service)
         
         let window = UIWindow()
-        window.rootViewController = view
+        window.rootViewController = listViewer
         window.makeKeyAndVisible()
         self.window = window
-
-        Task {
-            let propertyList = try await NetworkPropertyService(session: .shared)
-                .fetchPropertyList()
-            
-            print(">>> \(propertyList)")
-            
-            let propertyDetails = try await NetworkPropertyService(session: .shared)
-                .fetchDetails(for: propertyList.items.first!)
-            
-            print(">>> \(propertyDetails)")
-
-        }
         
         return true
     }

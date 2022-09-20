@@ -11,7 +11,7 @@ class MockPropertyService: PropertyService {
     private let list: PropertyList
     private let details: PropertyDetails
     
-    init(list: PropertyList = .init(items: [mockPropertyItem]), details: PropertyDetails = mockPropertyDetails) {
+    init(list: PropertyList = mockPropertyList, details: PropertyDetails = mockPropertyDetails) {
         self.list = list
         self.details = details
     }
@@ -40,6 +40,19 @@ let mockPropertyItem = PropertyList.Item(
         municipality: "Uppsala kommun"
     ))
 )
+
+let mockAreaItem = PropertyList.Item(
+    id: .init(rawValue: "1234567896"),
+    imageURL: .init(string: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Bertha_Petterssons_hus_01.jpg/800px-Bertha_Petterssons_hus_01.jpg")!,
+    type: .area,
+    attributes: .area(.init(
+        name: "Kvarngärdet",
+        ratingFormatted: "4/5",
+        averagePrice: 51300
+    ))
+)
+
+let mockPropertyList = PropertyList(items: [mockPropertyItem, mockAreaItem])
 
 let mockPropertyDetails = PropertyDetails(
     type: .highlightedProperty,
