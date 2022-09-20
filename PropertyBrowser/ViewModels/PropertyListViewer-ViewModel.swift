@@ -28,9 +28,7 @@ extension PropertyListViewer {
                         .fetchPropertyList()
                         .items
                         .map { ItemModel(item: $0) }
-                    
-                    print(">>> list items: \(listItems)")
-                    
+                                        
                     await MainActor.run { loadingState = .succeeded(value: listItems) }
                 } catch {
                     await MainActor.run { loadingState = .failed(error: error) }
@@ -51,7 +49,7 @@ extension PropertyListViewer {
                 areaDescription: String,
                 priceDescription: String,
                 livingAreaDescription: String,
-                roomAmountDescription: String
+                roomCountDescription: String
             )
 
             case area(
@@ -75,7 +73,7 @@ extension PropertyListViewer {
                     areaDescription: "\(propertyAttributes.area), \(propertyAttributes.municipality)",
                     priceDescription: "\(propertyAttributes.askingPrice) SEK",
                     livingAreaDescription: "\(propertyAttributes.livingArea) m²",
-                    roomAmountDescription: "\(propertyAttributes.numberOfRooms) rooms"
+                    roomCountDescription: "\(propertyAttributes.numberOfRooms) rooms"
                 )
                 
             case .area(let areaAttributes):

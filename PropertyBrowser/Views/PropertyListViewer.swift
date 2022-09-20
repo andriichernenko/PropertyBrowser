@@ -29,26 +29,32 @@ struct _PropertyListViewer: View {
     
     var body: some View {
         // TODO: Localize
-        List {
+        ScrollView {
             switch viewModel.loadingState {
             case .loading:
-                ProgressView("Loading…")
-                    .progressViewStyle(.circular)
+                ProgressView {
+                    Text("Loading…")
+                        .style(.regularText)
+                }
+                .progressViewStyle(.circular)
 
             case .succeeded(let items):
-                ForEach(items, id: \.id) {
-                    _PropertyListItem(itemModel: $0)
+                LazyVStack(alignment: .leading, spacing: 32) {
+                    ForEach(items, id: \.id) {
+                        _PropertyListItem(itemModel: $0)
+                    }
                 }
                 
             case .failed:
                 Text("Failed to load properties")
+                    .style(.regularText)
                 
             case .idle:
                 Spacer()
             }
         }
-        .listStyle(PlainListStyle())
         .frame(maxWidth: .infinity)
+        .padding(16)
         .onAppear { viewModel.viewDidAppear() }
     }
 }
@@ -66,15 +72,47 @@ struct _PropertyListItem: View {
     let itemModel: PropertyListViewer.ItemModel
     
     var body: some View {
-        VStack {
+        VStack(alignment: .leading, spacing: 4) {
             switch itemModel.type {
-            case .area:
-                Text("Area: \(itemModel.id)")
-            
-            case .property:
-                Text("Property: \(itemModel.id)")
+            case let .area(_, name, rating, price):
+                Text("Area")
+                    .style(.secondaryTitle)
+                
+                Text(name)
+                    .style(.importantText)
+                                
+                Text("Rating: \(rating)")
+                    .style(.regularText)
+                                            
+                HStack {
+                    Text("Average price: \(price)")
+                        .style(.regularText)
+
+                    Spacer()
+                }
+
+            case let .property(_, _, address, area, price, livingArea, roomCount):
+                Text(address)
+                    .style(.tertiaryTitle)
+                
+                Text(area)
+                    .style(.secondaryText)
+                                
+                HStack(spacing: 4) {
+                    Text(price)
+                        .style(.importantText)
+
+                    Spacer()
+                    
+                    Text(livingArea)
+                        .style(.importantText)
+
+                    Spacer()
+                    
+                    Text(roomCount)
+                        .style(.importantText)
+                }
             }
         }
-        .background(Color.yellow)
     }
 }
