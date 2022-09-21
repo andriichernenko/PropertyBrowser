@@ -1,5 +1,5 @@
 //
-//  ColorPalette.swift
+//  Colors.swift
 //  PropertyBrowser
 //
 //  Created by Andrii Chernenko on 2022-09-20.
