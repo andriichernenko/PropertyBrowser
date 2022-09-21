@@ -13,3 +13,16 @@ extension CGSize {
     
     static let highlightedImageAspectRatio = CGSize(width: 16, height: 9)
 }
+
+extension CGFloat {
+    
+    static let xSmall: CGFloat = 4
+    
+    static let small: CGFloat = 8
+    
+    static let medium: CGFloat = 16
+    
+    static let large: CGFloat = 32
+    
+    static let defaultPadding: CGFloat = .medium
+}

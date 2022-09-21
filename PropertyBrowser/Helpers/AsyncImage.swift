@@ -55,7 +55,7 @@ extension AsyncImage {
     class ViewModel: ObservableObject {
         let url: URL
         
-        @Published var state: LoadingState<UIImage> = .idle
+        @Published var state: State<UIImage> = .idle
         
         init(url: URL) {
             self.url = url
@@ -82,7 +82,7 @@ extension AsyncImage {
             }
         }
         
-        init(state: LoadingState<UIImage>) {
+        init(state: State<UIImage>) {
             self.url = mockPropertyItem.imageURL
             self.state = state
         }

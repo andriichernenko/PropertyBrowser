@@ -16,7 +16,7 @@ extension PropertyListViewer {
         private let propertyService: PropertyService
         private var selectItemSubscription: AnyCancellable?
 
-        @Published var state: LoadingState<[ItemModel]> = .idle
+        @Published var state: State<[ItemModel]> = .idle
         @Published private(set) var selectedPropertyItem: PropertyList.Item? = nil
         
         init(selectItem: SelectItem? = nil, propertyService: PropertyService) {

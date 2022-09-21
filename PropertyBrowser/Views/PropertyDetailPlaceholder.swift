@@ -25,6 +25,7 @@ struct _PropertyDetailPlaceholder: View {
             Text("Please select a property from the list")
                 .style(.regularText)
         }
+        .padding(.defaultPadding)
     }
 }
 

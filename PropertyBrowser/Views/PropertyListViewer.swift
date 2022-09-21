@@ -79,20 +79,20 @@ struct PropertyListItem: View {
     var isSelected: Bool
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 4) {
+        VStack(alignment: .leading, spacing: .xSmall) {
             switch itemModel.type {
             case let .area(name, rating, price):
                 Text("Area")
                     .style(.secondaryTitle)
 
-                Spacer(minLength: 8)
+                Spacer(minLength: .small)
                 
                 AsyncImage(
                     url: itemModel.imageURL,
                     aspectRatio: .normalImageAspectRatio
                 )
                 
-                Spacer(minLength: 8)
+                Spacer(minLength: .small)
                 
                 Text(name)
                     .style(.importantText)
@@ -112,9 +112,9 @@ struct PropertyListItem: View {
                     url: itemModel.imageURL,
                     aspectRatio: imageIsHighlighted ? .highlightedImageAspectRatio : .normalImageAspectRatio
                 )
-                .border(Color.imageHighlight, width: imageIsHighlighted ? 4 : 0)
+                .border(Color.imageHighlight, width: imageIsHighlighted ? .xSmall : 0)
                 
-                Spacer(minLength: 8)
+                Spacer(minLength: .small)
                 
                 Text(address)
                     .style(.tertiaryTitle)
@@ -122,7 +122,7 @@ struct PropertyListItem: View {
                 Text(area)
                     .style(.secondaryText)
 
-                HStack(spacing: 4) {
+                HStack(spacing: .xSmall) {
                     Text(price)
                         .style(.importantText)
 
@@ -138,7 +138,7 @@ struct PropertyListItem: View {
                 }
             }
         }
-        .padding(16)
+        .padding(.defaultPadding)
         .background(isSelected ? Color.selectedCellBackground : Color.background)
     }
 }

@@ -49,7 +49,7 @@ struct _PropertyDetailViewer: View {
                             aspectRatio: details.imageIsHighlighted ? .highlightedImageAspectRatio : .normalImageAspectRatio
                         )
                         
-                        Spacer(minLength: 16)
+                        Spacer(minLength: .medium)
                         
                         Text(details.streetAddress)
                             .style(.primaryTitle)
@@ -60,12 +60,12 @@ struct _PropertyDetailViewer: View {
                         Text(details.askingPrice)
                             .style(.tertiaryTitle)
 
-                        Spacer(minLength: 16)
+                        Spacer(minLength: .medium)
                         
                         Text(details.description)
                             .style(.regularText)
                         
-                        Spacer(minLength: 16)
+                        Spacer(minLength: .medium)
                         
                         ForEach([
                             ("Living area:", details.livingArea),
@@ -73,7 +73,7 @@ struct _PropertyDetailViewer: View {
                             ("Patio:", details.patio),
                             ("Days since publish:", details.daysSincePublishing),
                         ], id: \.0) { (label, data) in
-                            HStack(spacing: 4) {
+                            HStack(spacing: .xSmall) {
                                 Text(label)
                                     .style(.importantText)
 
@@ -81,7 +81,7 @@ struct _PropertyDetailViewer: View {
                                     .style(.regularText)
                             }
 
-                            Spacer(minLength: 4)
+                            Spacer(minLength: .xSmall)
                         }
                     }
                 }
@@ -94,7 +94,7 @@ struct _PropertyDetailViewer: View {
                 Spacer()
             }
         }
-        .padding(16)
+        .padding(.defaultPadding)
         .onAppear { viewModel.viewDidAppear() }
     }
 }

@@ -14,7 +14,7 @@ extension PropertyDetailViewer {
         private let item: PropertyList.Item
         private let propertyService: PropertyService
 
-        @Published var state: LoadingState<FormattedPropertyDetails> = .idle
+        @Published var state: State<FormattedPropertyDetails> = .idle
         
         init(item: PropertyList.Item, propertyService: PropertyService) {
             self.item = item
