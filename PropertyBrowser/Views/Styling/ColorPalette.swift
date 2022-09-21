@@ -12,4 +12,8 @@ extension Color {
     static let primaryText: Color = .black
     
     static let secondaryText: Color = .gray
+    
+    static let imageHighlight: Color = .yellow
+    
+    static let imagePlaceholder: Color = .gray.opacity(0.1)
 }

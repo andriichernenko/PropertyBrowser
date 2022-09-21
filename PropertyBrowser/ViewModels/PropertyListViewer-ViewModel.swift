@@ -12,15 +12,15 @@ extension PropertyListViewer {
     
     class ViewModel: ObservableObject {
         private let propertyService: PropertyService
-        
-        @Published var loadingState: LoadingState<[ItemModel]> = .idle
+
+        @Published var state: LoadingState<[ItemModel]> = .idle
         
         init(propertyService: PropertyService) {
             self.propertyService = propertyService
         }
         
         func viewDidAppear() {
-            loadingState = .loading
+            state = .loading
             
             Task {
                 do {
@@ -29,21 +29,21 @@ extension PropertyListViewer {
                         .items
                         .map { ItemModel(item: $0) }
                                         
-                    await MainActor.run { loadingState = .succeeded(value: listItems) }
+                    await MainActor.run { state = .succeeded(value: listItems) }
                 } catch {
-                    await MainActor.run { loadingState = .failed(error: error) }
+                    await MainActor.run { state = .failed(error: error) }
                 }
             }
         }
     }
     
-    struct ItemModel {
+    class ItemModel {
         let id: String
+        let imageURL: URL
         let type: `Type`
         
         enum `Type` {
             case property(
-                imageURL: URL,
                 imageIsHighlighted: Bool,
                 streetAddressDescription: String,
                 areaDescription: String,
@@ -53,7 +53,6 @@ extension PropertyListViewer {
             )
 
             case area(
-                imageURL: URL,
                 name: String,
                 ratingDescription: String,
                 averagePriceDescription: String
@@ -62,12 +61,12 @@ extension PropertyListViewer {
         
         init(item: PropertyList.Item) {
             self.id = item.id.rawValue
+            self.imageURL = item.imageURL
 
             switch item.attributes {
             
             case .property(let propertyAttributes):
                 self.type = .property(
-                    imageURL: item.imageURL,
                     imageIsHighlighted: item.type == .highlightedProperty,
                     streetAddressDescription: propertyAttributes.streetAddress,
                     areaDescription: "\(propertyAttributes.area), \(propertyAttributes.municipality)",
@@ -78,7 +77,6 @@ extension PropertyListViewer {
                 
             case .area(let areaAttributes):
                 self.type = .area(
-                    imageURL: item.imageURL,
                     name: areaAttributes.name,
                     ratingDescription: areaAttributes.ratingFormatted,
                     averagePriceDescription: "\(areaAttributes.averagePrice) SEK"

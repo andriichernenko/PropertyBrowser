@@ -25,6 +25,7 @@
 		40DB446228D931ED0002B3DD /* LoadingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DB446128D931ED0002B3DD /* LoadingState.swift */; };
 		40DB446528DA5ADD0002B3DD /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DB446428DA5ADD0002B3DD /* ColorPalette.swift */; };
 		40DB446728DA5B0A0002B3DD /* TextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DB446628DA5B0A0002B3DD /* TextStyle.swift */; };
+		40DB447128DA67FF0002B3DD /* AsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DB447028DA67FF0002B3DD /* AsyncImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		40DB446128D931ED0002B3DD /* LoadingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingState.swift; sourceTree = "<group>"; };
 		40DB446428DA5ADD0002B3DD /* ColorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
 		40DB446628DA5B0A0002B3DD /* TextStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStyle.swift; sourceTree = "<group>"; };
+		40DB447028DA67FF0002B3DD /* AsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +190,7 @@
 		40DB446028D931DA0002B3DD /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				40DB447028DA67FF0002B3DD /* AsyncImage.swift */,
 				40DB446128D931ED0002B3DD /* LoadingState.swift */,
 			);
 			path = Helpers;
@@ -338,6 +341,7 @@
 				40DB446228D931ED0002B3DD /* LoadingState.swift in Sources */,
 				40DB445128D9106C0002B3DD /* MockPropertyService.swift in Sources */,
 				40DB445928D918A00002B3DD /* PropertyDetails.swift in Sources */,
+				40DB447128DA67FF0002B3DD /* AsyncImage.swift in Sources */,
 				40DB445528D9181A0002B3DD /* PropertyList.swift in Sources */,
 				40DB444F28D90FE10002B3DD /* PropertyService.swift in Sources */,
 				40DB445D28D92D2F0002B3DD /* PropertyListViewer.swift in Sources */,

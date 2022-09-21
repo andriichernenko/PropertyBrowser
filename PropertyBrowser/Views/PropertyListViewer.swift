@@ -5,7 +5,7 @@
 //  Created by Andrii Chernenko on 2022-09-20.
 //
 
-import UIKit
+import Foundation
 import SwiftUI
 import Combine
 
@@ -26,11 +26,11 @@ class PropertyListViewer: UIHostingController<_PropertyListViewer> {
 struct _PropertyListViewer: View {
 
     @StateObject var viewModel: PropertyListViewer.ViewModel
-    
+        
     var body: some View {
         // TODO: Localize
         ScrollView {
-            switch viewModel.loadingState {
+            switch viewModel.state {
             case .loading:
                 ProgressView {
                     Text("Loading…")
@@ -41,20 +41,20 @@ struct _PropertyListViewer: View {
             case .succeeded(let items):
                 LazyVStack(alignment: .leading, spacing: 32) {
                     ForEach(items, id: \.id) {
-                        _PropertyListItem(itemModel: $0)
+                        PropertyListItem(itemModel: $0)
                     }
                 }
-                
+                .padding(16)
+
             case .failed:
                 Text("Failed to load properties")
                     .style(.regularText)
-                
+
             case .idle:
                 Spacer()
             }
         }
         .frame(maxWidth: .infinity)
-        .padding(16)
         .onAppear { viewModel.viewDidAppear() }
     }
 }
@@ -68,22 +68,31 @@ struct _PropertyListViewer_Previews: PreviewProvider {
     }
 }
 
-struct _PropertyListItem: View {
-    let itemModel: PropertyListViewer.ItemModel
+struct PropertyListItem: View {
+    var itemModel: PropertyListViewer.ItemModel
     
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
             switch itemModel.type {
-            case let .area(_, name, rating, price):
+            case let .area(name, rating, price):
                 Text("Area")
                     .style(.secondaryTitle)
+
+                Spacer(minLength: 8)
+                
+                AsyncImage(
+                    url: itemModel.imageURL,
+                    aspectRatio: .normalImageAspectRatio
+                )
+                
+                Spacer(minLength: 8)
                 
                 Text(name)
                     .style(.importantText)
-                                
+
                 Text("Rating: \(rating)")
                     .style(.regularText)
-                                            
+
                 HStack {
                     Text("Average price: \(price)")
                         .style(.regularText)
@@ -91,28 +100,43 @@ struct _PropertyListItem: View {
                     Spacer()
                 }
 
-            case let .property(_, _, address, area, price, livingArea, roomCount):
+            case let .property(imageIsHighlighted, address, area, price, livingArea, roomCount):
+                AsyncImage(
+                    url: itemModel.imageURL,
+                    aspectRatio: imageIsHighlighted ? .highlightedImageAspectRatio : .normalImageAspectRatio
+                )
+                .border(Color.imageHighlight, width: imageIsHighlighted ? 4 : 0)
+                
+                Spacer(minLength: 8)
+                
                 Text(address)
                     .style(.tertiaryTitle)
-                
+
                 Text(area)
                     .style(.secondaryText)
-                                
+
                 HStack(spacing: 4) {
                     Text(price)
                         .style(.importantText)
 
                     Spacer()
-                    
+
                     Text(livingArea)
                         .style(.importantText)
 
                     Spacer()
-                    
+
                     Text(roomCount)
                         .style(.importantText)
                 }
             }
         }
     }
+}
+
+private extension CGSize {
+    
+    static let normalImageAspectRatio = CGSize(width: 21, height: 9)
+    
+    static let highlightedImageAspectRatio = CGSize(width: 16, height: 9)
 }
