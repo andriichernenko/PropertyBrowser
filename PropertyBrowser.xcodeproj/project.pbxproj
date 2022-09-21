@@ -15,12 +15,14 @@
 		408F349528DAB5B500DD7FB3 /* PropertyDetailPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408F349428DAB5B500DD7FB3 /* PropertyDetailPlaceholder.swift */; };
 		408F349828DABA8A00DD7FB3 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408F349728DABA8A00DD7FB3 /* Formatters.swift */; };
 		408F349B28DABBDE00DD7FB3 /* MonetaryAmountFormattingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408F349A28DABBDE00DD7FB3 /* MonetaryAmountFormattingTests.swift */; };
+		408F349F28DAC0EB00DD7FB3 /* PropertyBrowserViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408F349E28DAC0EB00DD7FB3 /* PropertyBrowserViewModelTests.swift */; };
+		408F34A128DAC20600DD7FB3 /* PropertyListViewerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408F34A028DAC20600DD7FB3 /* PropertyListViewerViewModelTests.swift */; };
+		408F34A328DAC9AC00DD7FB3 /* PropertyDetailViewerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408F34A228DAC9AC00DD7FB3 /* PropertyDetailViewerViewModelTests.swift */; };
 		40DB441928D8ED950002B3DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DB441828D8ED950002B3DD /* AppDelegate.swift */; };
 		40DB442228D8ED950002B3DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40DB442128D8ED950002B3DD /* Assets.xcassets */; };
 		40DB442528D8ED950002B3DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40DB442328D8ED950002B3DD /* LaunchScreen.storyboard */; };
 		40DB443028D8ED950002B3DD /* PropertyListSerializationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DB442F28D8ED950002B3DD /* PropertyListSerializationTests.swift */; };
 		40DB443A28D8ED950002B3DD /* PropertyBrowserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DB443928D8ED950002B3DD /* PropertyBrowserUITests.swift */; };
-		40DB443C28D8ED950002B3DD /* PropertyBrowserUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DB443B28D8ED950002B3DD /* PropertyBrowserUITestsLaunchTests.swift */; };
 		40DB444F28D90FE10002B3DD /* PropertyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DB444E28D90FE10002B3DD /* PropertyService.swift */; };
 		40DB445128D9106C0002B3DD /* MockPropertyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DB445028D9106C0002B3DD /* MockPropertyService.swift */; };
 		40DB445328D912680002B3DD /* NetworkPropertyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DB445228D912680002B3DD /* NetworkPropertyService.swift */; };
@@ -62,6 +64,9 @@
 		408F349428DAB5B500DD7FB3 /* PropertyDetailPlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyDetailPlaceholder.swift; sourceTree = "<group>"; };
 		408F349728DABA8A00DD7FB3 /* Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
 		408F349A28DABBDE00DD7FB3 /* MonetaryAmountFormattingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonetaryAmountFormattingTests.swift; sourceTree = "<group>"; };
+		408F349E28DAC0EB00DD7FB3 /* PropertyBrowserViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyBrowserViewModelTests.swift; sourceTree = "<group>"; };
+		408F34A028DAC20600DD7FB3 /* PropertyListViewerViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyListViewerViewModelTests.swift; sourceTree = "<group>"; };
+		408F34A228DAC9AC00DD7FB3 /* PropertyDetailViewerViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyDetailViewerViewModelTests.swift; sourceTree = "<group>"; };
 		40DB441528D8ED950002B3DD /* PropertyBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PropertyBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40DB441828D8ED950002B3DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40DB442128D8ED950002B3DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -71,7 +76,6 @@
 		40DB442F28D8ED950002B3DD /* PropertyListSerializationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyListSerializationTests.swift; sourceTree = "<group>"; };
 		40DB443528D8ED950002B3DD /* PropertyBrowserUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PropertyBrowserUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		40DB443928D8ED950002B3DD /* PropertyBrowserUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyBrowserUITests.swift; sourceTree = "<group>"; };
-		40DB443B28D8ED950002B3DD /* PropertyBrowserUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyBrowserUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		40DB444E28D90FE10002B3DD /* PropertyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyService.swift; sourceTree = "<group>"; };
 		40DB445028D9106C0002B3DD /* MockPropertyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPropertyService.swift; sourceTree = "<group>"; };
 		40DB445228D912680002B3DD /* NetworkPropertyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkPropertyService.swift; sourceTree = "<group>"; };
@@ -121,6 +125,24 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		408F349C28DABFCE00DD7FB3 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				408F349E28DAC0EB00DD7FB3 /* PropertyBrowserViewModelTests.swift */,
+				408F34A028DAC20600DD7FB3 /* PropertyListViewerViewModelTests.swift */,
+				408F34A228DAC9AC00DD7FB3 /* PropertyDetailViewerViewModelTests.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		408F349D28DABFEC00DD7FB3 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				408F349A28DABBDE00DD7FB3 /* MonetaryAmountFormattingTests.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		40DB440C28D8ED950002B3DD = {
 			isa = PBXGroup;
 			children = (
@@ -161,7 +183,8 @@
 			isa = PBXGroup;
 			children = (
 				408F349928DABB9B00DD7FB3 /* Models */,
-				408F349A28DABBDE00DD7FB3 /* MonetaryAmountFormattingTests.swift */,
+				408F349C28DABFCE00DD7FB3 /* ViewModels */,
+				408F349D28DABFEC00DD7FB3 /* Helpers */,
 			);
 			path = PropertyBrowserTests;
 			sourceTree = "<group>";
@@ -170,7 +193,6 @@
 			isa = PBXGroup;
 			children = (
 				40DB443928D8ED950002B3DD /* PropertyBrowserUITests.swift */,
-				40DB443B28D8ED950002B3DD /* PropertyBrowserUITestsLaunchTests.swift */,
 			);
 			path = PropertyBrowserUITests;
 			sourceTree = "<group>";
@@ -396,6 +418,9 @@
 			files = (
 				408F349B28DABBDE00DD7FB3 /* MonetaryAmountFormattingTests.swift in Sources */,
 				40DB445B28D922D20002B3DD /* PropertyDetailsSerializationTests.swift in Sources */,
+				408F349F28DAC0EB00DD7FB3 /* PropertyBrowserViewModelTests.swift in Sources */,
+				408F34A128DAC20600DD7FB3 /* PropertyListViewerViewModelTests.swift in Sources */,
+				408F34A328DAC9AC00DD7FB3 /* PropertyDetailViewerViewModelTests.swift in Sources */,
 				40DB443028D8ED950002B3DD /* PropertyListSerializationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -404,7 +429,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40DB443C28D8ED950002B3DD /* PropertyBrowserUITestsLaunchTests.swift in Sources */,
 				40DB443A28D8ED950002B3DD /* PropertyBrowserUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

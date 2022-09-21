@@ -36,7 +36,7 @@ extension PropertyDetailViewer {
     }
 }
 
-struct FormattedPropertyDetails {
+struct FormattedPropertyDetails: Equatable {
     let imageURL: URL
     let imageIsHighlighted: Bool
     

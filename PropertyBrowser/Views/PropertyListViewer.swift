@@ -46,9 +46,9 @@ struct _PropertyListViewer: View {
                         ForEach(items, id: \.id) { listItem in
                             PropertyListItem(
                                 itemModel: listItem,
-                                isSelected: viewModel.isSelected(listItem)
+                                isSelected: viewModel.isSelected(listItem.propertyItem)
                             )
-                            .onTapGesture { viewModel.didTapListItem(listItem) }
+                            .onTapGesture { viewModel.didTapListItem(listItem.propertyItem) }
                         }
                     }
                 }

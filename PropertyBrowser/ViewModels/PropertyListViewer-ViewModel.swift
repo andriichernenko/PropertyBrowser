@@ -45,17 +45,17 @@ extension PropertyListViewer {
             }
         }
 
-        func isSelected(_ item: ItemModel) -> Bool {
-            return item.propertyItem == selectedPropertyItem
+        func isSelected(_ item: PropertyList.Item) -> Bool {
+            return item == selectedPropertyItem
         }
         
-        func didTapListItem(_ item: ItemModel) {
+        func didTapListItem(_ item: PropertyList.Item) {
             guard case .succeeded(let items) = state else {
                 return
             }
 
-            if items.first == item {
-                selectedPropertyItem = item.propertyItem
+            if items.first?.propertyItem == item {
+                selectedPropertyItem = item
             }
         }
     }
@@ -81,8 +81,8 @@ extension PropertyListViewer {
                     streetAddressDescription: propertyAttributes.streetAddress,
                     areaDescription: "\(propertyAttributes.area), \(propertyAttributes.municipality)",
                     priceDescription: propertyAttributes.askingPrice.formatted,
-                    livingAreaDescription: "\(propertyAttributes.livingArea) m²",
-                    roomCountDescription: "\(propertyAttributes.numberOfRooms) rooms"
+                    livingAreaDescription: "\(propertyAttributes.livingArea) m²",
+                    roomCountDescription: "\(propertyAttributes.numberOfRooms) rooms"
                 )
                 
             case .area(let areaAttributes):

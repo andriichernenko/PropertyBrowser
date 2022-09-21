@@ -13,3 +13,19 @@ enum State<Value> {
     case succeeded(value: Value)
     case failed(error: Error)
 }
+
+extension State: Equatable where Value: Equatable {
+    
+    static func == (lhs: State<Value>, rhs: State<Value>) -> Bool {
+        switch (lhs, rhs) {
+        case let (.succeeded(lhsValue), .succeeded(rhsValue)):
+            return lhsValue == rhsValue
+            
+        case (.idle, .idle), (.loading, .loading), (.failed, .failed):
+            return true
+            
+        default:
+            return false
+        }
+    }
+}

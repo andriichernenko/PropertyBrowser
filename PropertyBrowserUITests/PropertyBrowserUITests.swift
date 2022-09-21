@@ -7,6 +7,7 @@
 
 import XCTest
 
+// TODO: End-to-end tests
 final class PropertyBrowserUITests: XCTestCase {
 
     override func setUpWithError() throws {
