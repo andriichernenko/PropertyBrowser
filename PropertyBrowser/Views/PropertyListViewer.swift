@@ -29,7 +29,7 @@ struct _PropertyListViewer: View {
         
     var body: some View {
         // TODO: Localize
-        ScrollView {
+        VStack {
             switch viewModel.state {
             case .loading:
                 ProgressView {
@@ -39,12 +39,13 @@ struct _PropertyListViewer: View {
                 .progressViewStyle(.circular)
 
             case .succeeded(let items):
-                LazyVStack(alignment: .leading, spacing: 32) {
-                    ForEach(items, id: \.id) {
-                        PropertyListItem(itemModel: $0)
+                ScrollView {
+                    LazyVStack(alignment: .leading, spacing: 32) {
+                        ForEach(items, id: \.id) {
+                            PropertyListItem(itemModel: $0)
+                        }
                     }
                 }
-                .padding(16)
 
             case .failed:
                 Text("Failed to load properties")
@@ -54,7 +55,7 @@ struct _PropertyListViewer: View {
                 Spacer()
             }
         }
-        .frame(maxWidth: .infinity)
+        .padding(16)
         .onAppear { viewModel.viewDidAppear() }
     }
 }
@@ -132,11 +133,4 @@ struct PropertyListItem: View {
             }
         }
     }
-}
-
-private extension CGSize {
-    
-    static let normalImageAspectRatio = CGSize(width: 21, height: 9)
-    
-    static let highlightedImageAspectRatio = CGSize(width: 16, height: 9)
 }

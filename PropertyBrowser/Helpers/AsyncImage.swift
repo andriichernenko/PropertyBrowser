@@ -101,22 +101,22 @@ struct AsyncImage_Previews: PreviewProvider {
         ScrollView {
             AsyncImage(
                 viewModel: .init(state: .succeeded(value: mockImage)),
-                aspectRatio: .init(width: 16, height: 9)
+                aspectRatio: .highlightedImageAspectRatio
             )
             
             AsyncImage(
                 viewModel: .init(state: .succeeded(value: mockImage)),
-                aspectRatio: .init(width: 21, height: 9)
+                aspectRatio: .normalImageAspectRatio
             )
             
             AsyncImage(
                 viewModel: .init(state: .loading),
-                aspectRatio: .init(width: 21, height: 9)
+                aspectRatio: .normalImageAspectRatio
             )
             
             AsyncImage(
                 viewModel: .init(state: .failed(error: AsyncImageError.decodingFailed)),
-                aspectRatio: .init(width: 21, height: 9)
+                aspectRatio: .normalImageAspectRatio
             )
         }
         .padding(16)

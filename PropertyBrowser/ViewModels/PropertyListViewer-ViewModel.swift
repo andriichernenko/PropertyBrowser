@@ -42,23 +42,6 @@ extension PropertyListViewer {
         let imageURL: URL
         let type: `Type`
         
-        enum `Type` {
-            case property(
-                imageIsHighlighted: Bool,
-                streetAddressDescription: String,
-                areaDescription: String,
-                priceDescription: String,
-                livingAreaDescription: String,
-                roomCountDescription: String
-            )
-
-            case area(
-                name: String,
-                ratingDescription: String,
-                averagePriceDescription: String
-            )
-        }
-        
         init(item: PropertyList.Item) {
             self.id = item.id.rawValue
             self.imageURL = item.imageURL
@@ -82,6 +65,23 @@ extension PropertyListViewer {
                     averagePriceDescription: "\(areaAttributes.averagePrice) SEK"
                 )
             }
+        }
+        
+        enum `Type` {
+            case property(
+                imageIsHighlighted: Bool,
+                streetAddressDescription: String,
+                areaDescription: String,
+                priceDescription: String,
+                livingAreaDescription: String,
+                roomCountDescription: String
+            )
+
+            case area(
+                name: String,
+                ratingDescription: String,
+                averagePriceDescription: String
+            )
         }
     }
 }
