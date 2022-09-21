@@ -9,24 +9,27 @@ import Foundation
 import Combine
 
 extension PropertyListViewer {
-    typealias SelectItem = (PropertyList.Item) -> Void
+    typealias SelectItem = any Subject<PropertyList.Item?, Never>
 
     class ViewModel: ObservableObject {
-        
-        private let didSelectItem: SelectItem
+
         private let propertyService: PropertyService
+        private var selectItemSubscription: AnyCancellable?
 
         @Published var state: LoadingState<[ItemModel]> = .idle
         @Published private(set) var selectedPropertyItem: PropertyList.Item? = nil
         
-        init(didSelectItem: @escaping SelectItem, propertyService: PropertyService) {
-            self.didSelectItem = didSelectItem
+        init(selectItem: SelectItem? = nil, propertyService: PropertyService) {
             self.propertyService = propertyService
+            
+            if let selectItem {
+                self.selectItemSubscription = $selectedPropertyItem
+                    .subscribe(selectItem)
+            }
         }
         
         func viewDidAppear() {
             state = .loading
-            selectedPropertyItem = nil
             
             Task {
                 do {
@@ -53,7 +56,6 @@ extension PropertyListViewer {
 
             if items.first == item {
                 selectedPropertyItem = item.propertyItem
-                didSelectItem(item.propertyItem)
             }
         }
     }

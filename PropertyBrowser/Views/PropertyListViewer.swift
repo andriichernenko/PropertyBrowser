@@ -11,9 +11,9 @@ import Combine
 
 class PropertyListViewer: UIHostingController<_PropertyListViewer> {
     
-    init(didSelectItem: @escaping SelectItem, propertyService: PropertyService) {
+    init(selectItem: SelectItem, propertyService: PropertyService) {
         super.init(rootView: .init(
-            viewModel: .init(didSelectItem: didSelectItem, propertyService: propertyService)
+            viewModel: .init(selectItem: selectItem, propertyService: propertyService)
         ))
     }
     
@@ -69,10 +69,7 @@ struct _PropertyListViewer_Previews: PreviewProvider {
         
     static var previews: some View {
         _PropertyListViewer(
-            viewModel: .init(
-                didSelectItem: { _ in },
-                propertyService: MockPropertyService(list: mockPropertyList)
-            )
+            viewModel: .init(propertyService: MockPropertyService(list: mockPropertyList))
         )
     }
 }

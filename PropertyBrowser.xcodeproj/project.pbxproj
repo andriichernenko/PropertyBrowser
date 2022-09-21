@@ -10,6 +10,9 @@
 		408F348B28DA8C4F00DD7FB3 /* PropertyDetailViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408F348A28DA8C4F00DD7FB3 /* PropertyDetailViewer.swift */; };
 		408F348D28DA8C9100DD7FB3 /* Dimensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408F348C28DA8C9100DD7FB3 /* Dimensions.swift */; };
 		408F348F28DA8E1400DD7FB3 /* PropertyDetailViewer-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408F348E28DA8E1400DD7FB3 /* PropertyDetailViewer-ViewModel.swift */; };
+		408F349128DAA98D00DD7FB3 /* PropertyBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408F349028DAA98D00DD7FB3 /* PropertyBrowser.swift */; };
+		408F349328DAB34700DD7FB3 /* PropertyBrowser-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408F349228DAB34700DD7FB3 /* PropertyBrowser-ViewModel.swift */; };
+		408F349528DAB5B500DD7FB3 /* PropertyDetailPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408F349428DAB5B500DD7FB3 /* PropertyDetailPlaceholder.swift */; };
 		40DB441928D8ED950002B3DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DB441828D8ED950002B3DD /* AppDelegate.swift */; };
 		40DB442228D8ED950002B3DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40DB442128D8ED950002B3DD /* Assets.xcassets */; };
 		40DB442528D8ED950002B3DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40DB442328D8ED950002B3DD /* LaunchScreen.storyboard */; };
@@ -52,6 +55,9 @@
 		408F348A28DA8C4F00DD7FB3 /* PropertyDetailViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyDetailViewer.swift; sourceTree = "<group>"; };
 		408F348C28DA8C9100DD7FB3 /* Dimensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dimensions.swift; sourceTree = "<group>"; };
 		408F348E28DA8E1400DD7FB3 /* PropertyDetailViewer-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PropertyDetailViewer-ViewModel.swift"; sourceTree = "<group>"; };
+		408F349028DAA98D00DD7FB3 /* PropertyBrowser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyBrowser.swift; sourceTree = "<group>"; };
+		408F349228DAB34700DD7FB3 /* PropertyBrowser-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PropertyBrowser-ViewModel.swift"; sourceTree = "<group>"; };
+		408F349428DAB5B500DD7FB3 /* PropertyDetailPlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyDetailPlaceholder.swift; sourceTree = "<group>"; };
 		40DB441528D8ED950002B3DD /* PropertyBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PropertyBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40DB441828D8ED950002B3DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40DB442128D8ED950002B3DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -159,8 +165,10 @@
 		40DB444828D8F15E0002B3DD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				408F349028DAA98D00DD7FB3 /* PropertyBrowser.swift */,
 				40DB445C28D92D2F0002B3DD /* PropertyListViewer.swift */,
 				408F348A28DA8C4F00DD7FB3 /* PropertyDetailViewer.swift */,
+				408F349428DAB5B500DD7FB3 /* PropertyDetailPlaceholder.swift */,
 				40DB446328DA5A880002B3DD /* Styling */,
 			);
 			path = Views;
@@ -169,6 +177,7 @@
 		40DB444928D8F16C0002B3DD /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				408F349228DAB34700DD7FB3 /* PropertyBrowser-ViewModel.swift */,
 				40DB445E28D92EF20002B3DD /* PropertyListViewer-ViewModel.swift */,
 				408F348E28DA8E1400DD7FB3 /* PropertyDetailViewer-ViewModel.swift */,
 			);
@@ -344,6 +353,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				408F349528DAB5B500DD7FB3 /* PropertyDetailPlaceholder.swift in Sources */,
+				408F349328DAB34700DD7FB3 /* PropertyBrowser-ViewModel.swift in Sources */,
 				40DB446728DA5B0A0002B3DD /* TextStyle.swift in Sources */,
 				40DB445328D912680002B3DD /* NetworkPropertyService.swift in Sources */,
 				40DB445728D918650002B3DD /* MonetaryAmount.swift in Sources */,
@@ -352,6 +363,7 @@
 				40DB445128D9106C0002B3DD /* MockPropertyService.swift in Sources */,
 				40DB445928D918A00002B3DD /* PropertyDetails.swift in Sources */,
 				40DB447128DA67FF0002B3DD /* AsyncImage.swift in Sources */,
+				408F349128DAA98D00DD7FB3 /* PropertyBrowser.swift in Sources */,
 				40DB445528D9181A0002B3DD /* PropertyList.swift in Sources */,
 				40DB444F28D90FE10002B3DD /* PropertyService.swift in Sources */,
 				40DB445D28D92D2F0002B3DD /* PropertyListViewer.swift in Sources */,
