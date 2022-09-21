@@ -9,18 +9,24 @@ import Foundation
 import Combine
 
 extension PropertyListViewer {
-    
+    typealias SelectItem = (PropertyList.Item) -> Void
+
     class ViewModel: ObservableObject {
+        
+        private let didSelectItem: SelectItem
         private let propertyService: PropertyService
 
         @Published var state: LoadingState<[ItemModel]> = .idle
+        @Published private(set) var selectedPropertyItem: PropertyList.Item? = nil
         
-        init(propertyService: PropertyService) {
+        init(didSelectItem: @escaping SelectItem, propertyService: PropertyService) {
+            self.didSelectItem = didSelectItem
             self.propertyService = propertyService
         }
         
         func viewDidAppear() {
             state = .loading
+            selectedPropertyItem = nil
             
             Task {
                 do {
@@ -35,14 +41,33 @@ extension PropertyListViewer {
                 }
             }
         }
+
+        func isSelected(_ item: ItemModel) -> Bool {
+            return item.propertyItem == selectedPropertyItem
+        }
+        
+        func didTapListItem(_ item: ItemModel) {
+            guard case .succeeded(let items) = state else {
+                return
+            }
+
+            if items.first == item {
+                selectedPropertyItem = item.propertyItem
+                didSelectItem(item.propertyItem)
+            }
+        }
     }
     
-    class ItemModel {
+    struct ItemModel: Equatable {
+        let propertyItem: PropertyList.Item
+        
         let id: String
         let imageURL: URL
         let type: `Type`
         
         init(item: PropertyList.Item) {
+            self.propertyItem = item
+            
             self.id = item.id.rawValue
             self.imageURL = item.imageURL
 
@@ -67,7 +92,7 @@ extension PropertyListViewer {
             }
         }
         
-        enum `Type` {
+        enum `Type`: Equatable {
             case property(
                 imageIsHighlighted: Bool,
                 streetAddressDescription: String,

@@ -11,8 +11,10 @@ import Combine
 
 class PropertyListViewer: UIHostingController<_PropertyListViewer> {
     
-    init(propertyService: PropertyService) {
-        super.init(rootView: .init(viewModel: .init(propertyService: propertyService)))
+    init(didSelectItem: @escaping SelectItem, propertyService: PropertyService) {
+        super.init(rootView: .init(
+            viewModel: .init(didSelectItem: didSelectItem, propertyService: propertyService)
+        ))
     }
     
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
@@ -40,9 +42,13 @@ struct _PropertyListViewer: View {
 
             case .succeeded(let items):
                 ScrollView {
-                    LazyVStack(alignment: .leading, spacing: 32) {
-                        ForEach(items, id: \.id) {
-                            PropertyListItem(itemModel: $0)
+                    LazyVStack(alignment: .leading) {
+                        ForEach(items, id: \.id) { listItem in
+                            PropertyListItem(
+                                itemModel: listItem,
+                                isSelected: viewModel.isSelected(listItem)
+                            )
+                            .onTapGesture { viewModel.didTapListItem(listItem) }
                         }
                     }
                 }
@@ -55,7 +61,6 @@ struct _PropertyListViewer: View {
                 Spacer()
             }
         }
-        .padding(16)
         .onAppear { viewModel.viewDidAppear() }
     }
 }
@@ -64,13 +69,17 @@ struct _PropertyListViewer_Previews: PreviewProvider {
         
     static var previews: some View {
         _PropertyListViewer(
-            viewModel: .init(propertyService: MockPropertyService(list: mockPropertyList))
+            viewModel: .init(
+                didSelectItem: { _ in },
+                propertyService: MockPropertyService(list: mockPropertyList)
+            )
         )
     }
 }
 
 struct PropertyListItem: View {
     var itemModel: PropertyListViewer.ItemModel
+    var isSelected: Bool
     
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
@@ -132,5 +141,7 @@ struct PropertyListItem: View {
                 }
             }
         }
+        .padding(16)
+        .background(isSelected ? Color.selectedCellBackground : Color.background)
     }
 }

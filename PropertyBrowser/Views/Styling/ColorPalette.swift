@@ -16,4 +16,8 @@ extension Color {
     static let imageHighlight: Color = .yellow
     
     static let imagePlaceholder: Color = .gray.opacity(0.1)
+    
+    static let background: Color = .white
+    
+    static let selectedCellBackground: Color = .imageHighlight.opacity(0.1)
 }
