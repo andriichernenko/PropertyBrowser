@@ -13,6 +13,8 @@
 		408F349128DAA98D00DD7FB3 /* PropertyBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408F349028DAA98D00DD7FB3 /* PropertyBrowser.swift */; };
 		408F349328DAB34700DD7FB3 /* PropertyBrowser-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408F349228DAB34700DD7FB3 /* PropertyBrowser-ViewModel.swift */; };
 		408F349528DAB5B500DD7FB3 /* PropertyDetailPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408F349428DAB5B500DD7FB3 /* PropertyDetailPlaceholder.swift */; };
+		408F349828DABA8A00DD7FB3 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408F349728DABA8A00DD7FB3 /* Formatters.swift */; };
+		408F349B28DABBDE00DD7FB3 /* MonetaryAmountFormattingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408F349A28DABBDE00DD7FB3 /* MonetaryAmountFormattingTests.swift */; };
 		40DB441928D8ED950002B3DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DB441828D8ED950002B3DD /* AppDelegate.swift */; };
 		40DB442228D8ED950002B3DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40DB442128D8ED950002B3DD /* Assets.xcassets */; };
 		40DB442528D8ED950002B3DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40DB442328D8ED950002B3DD /* LaunchScreen.storyboard */; };
@@ -58,6 +60,8 @@
 		408F349028DAA98D00DD7FB3 /* PropertyBrowser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyBrowser.swift; sourceTree = "<group>"; };
 		408F349228DAB34700DD7FB3 /* PropertyBrowser-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PropertyBrowser-ViewModel.swift"; sourceTree = "<group>"; };
 		408F349428DAB5B500DD7FB3 /* PropertyDetailPlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyDetailPlaceholder.swift; sourceTree = "<group>"; };
+		408F349728DABA8A00DD7FB3 /* Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
+		408F349A28DABBDE00DD7FB3 /* MonetaryAmountFormattingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonetaryAmountFormattingTests.swift; sourceTree = "<group>"; };
 		40DB441528D8ED950002B3DD /* PropertyBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PropertyBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40DB441828D8ED950002B3DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40DB442128D8ED950002B3DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -108,6 +112,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		408F349928DABB9B00DD7FB3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				40DB442F28D8ED950002B3DD /* PropertyListSerializationTests.swift */,
+				40DB445A28D922D20002B3DD /* PropertyDetailsSerializationTests.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		40DB440C28D8ED950002B3DD = {
 			isa = PBXGroup;
 			children = (
@@ -147,8 +160,8 @@
 		40DB442E28D8ED950002B3DD /* PropertyBrowserTests */ = {
 			isa = PBXGroup;
 			children = (
-				40DB442F28D8ED950002B3DD /* PropertyListSerializationTests.swift */,
-				40DB445A28D922D20002B3DD /* PropertyDetailsSerializationTests.swift */,
+				408F349928DABB9B00DD7FB3 /* Models */,
+				408F349A28DABBDE00DD7FB3 /* MonetaryAmountFormattingTests.swift */,
 			);
 			path = PropertyBrowserTests;
 			sourceTree = "<group>";
@@ -208,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				40DB446128D931ED0002B3DD /* State.swift */,
+				408F349728DABA8A00DD7FB3 /* Formatters.swift */,
 				40DB447028DA67FF0002B3DD /* AsyncImage.swift */,
 			);
 			path = Helpers;
@@ -371,6 +385,7 @@
 				40DB445F28D92EF20002B3DD /* PropertyListViewer-ViewModel.swift in Sources */,
 				40DB441928D8ED950002B3DD /* AppDelegate.swift in Sources */,
 				40DB446528DA5ADD0002B3DD /* ColorPalette.swift in Sources */,
+				408F349828DABA8A00DD7FB3 /* Formatters.swift in Sources */,
 				408F348F28DA8E1400DD7FB3 /* PropertyDetailViewer-ViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -379,6 +394,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				408F349B28DABBDE00DD7FB3 /* MonetaryAmountFormattingTests.swift in Sources */,
 				40DB445B28D922D20002B3DD /* PropertyDetailsSerializationTests.swift in Sources */,
 				40DB443028D8ED950002B3DD /* PropertyListSerializationTests.swift in Sources */,
 			);

@@ -80,7 +80,7 @@ extension PropertyListViewer {
                     imageIsHighlighted: item.type == .highlightedProperty,
                     streetAddressDescription: propertyAttributes.streetAddress,
                     areaDescription: "\(propertyAttributes.area), \(propertyAttributes.municipality)",
-                    priceDescription: "\(propertyAttributes.askingPrice) SEK",
+                    priceDescription: propertyAttributes.askingPrice.formatted,
                     livingAreaDescription: "\(propertyAttributes.livingArea) m²",
                     roomCountDescription: "\(propertyAttributes.numberOfRooms) rooms"
                 )
@@ -89,7 +89,7 @@ extension PropertyListViewer {
                 self.type = .area(
                     name: areaAttributes.name,
                     ratingDescription: areaAttributes.ratingFormatted,
-                    averagePriceDescription: "\(areaAttributes.averagePrice) SEK"
+                    averagePriceDescription: areaAttributes.averagePrice.formatted
                 )
             }
         }

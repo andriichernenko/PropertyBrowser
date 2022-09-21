@@ -54,10 +54,10 @@ struct FormattedPropertyDetails {
         self.imageIsHighlighted = propertyDetails.type == .highlightedProperty
         
         self.streetAddress = propertyDetails.streetAddress
-        self.askingPrice = "\(propertyDetails.askingPrice) SEK"
+        self.askingPrice = propertyDetails.askingPrice.formatted
         self.areaInfo = "\(propertyDetails.area), \(propertyDetails.municipality)"
         self.description = propertyDetails.description
-        self.livingArea = "\(propertyDetails.livingArea) m²"
+        self.livingArea = "\(propertyDetails.livingArea) m²"
         self.roomCount = "\(propertyDetails.numberOfRooms)"
         self.patio = "\(propertyDetails.patio.rawValue)"
         self.daysSincePublishing = "\(propertyDetails.daysSincePublishing)"
